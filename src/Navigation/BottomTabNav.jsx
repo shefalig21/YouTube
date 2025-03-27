@@ -6,26 +6,30 @@ import LandingScreen from '../Screens/LandingScreen';
 import Shorts from './Shorts';
 import Subscriptions from './Subscriptions';
 import You from './You';
+import HomeStack from './HomeStack';
+import { View } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNav = () => {
   return (
-    <NavigationContainer>
+    
+    <View testID="bottom-tab">
       <Tab.Navigator
         screenOptions={{
           tabBarActiveTintColor: 'blue',
           tabBarInactiveTintColor: 'black',
           headerShown: false,
-        }}
+        }}    
       >
         <Tab.Screen
           name="Home"
-          component={LandingScreen}
+          component={HomeStack}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="home" size={size} color={color} />
+              <Icon name="home" size={size} color={color}/>
             ),
+            testID:"home-icon",
           }}
         />
         <Tab.Screen
@@ -33,8 +37,9 @@ const BottomTabNav = () => {
           component={Shorts}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="play-circle-outline" size={size} color={color} />
+              <Icon name="play-circle-outline" size={size} color={color}/>
             ),
+            testID:"shorts-icon",
           }}
         />
         <Tab.Screen
@@ -42,8 +47,9 @@ const BottomTabNav = () => {
           component={Subscriptions}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="subscriptions" size={size} color={color} />
+              <Icon name="subscriptions" size={size} color={color}/>
             ),
+            testID:"subscriptions-icon",
           }}
         />
         <Tab.Screen
@@ -51,12 +57,15 @@ const BottomTabNav = () => {
           component={You}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <Icon name="person" size={size} color={color} />
+              <Icon name="person" size={size} color={color}/>
             ),
+            testID:"you-icon",
           }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
+      </View>
+
+
   );
 };
 

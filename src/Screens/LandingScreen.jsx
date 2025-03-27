@@ -8,9 +8,9 @@ import VideoCard from '../Components/VideoCard';
 export class LandingScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} testID="landing-screen">
         <Header navigation={this.props.navigation}/>
-        <SubHeader />
+        <SubHeader/>
 
         <FlatList
           data={videos}
@@ -39,9 +39,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
-
-
-
 
 
 

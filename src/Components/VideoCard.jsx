@@ -38,7 +38,7 @@ class VideoCard extends Component {
 
 const styles = StyleSheet.create({
 videoContainer:{
-    marginTop:45,
+    marginTop:35,
 },
   videoCard: {
     marginBottom: 6,
