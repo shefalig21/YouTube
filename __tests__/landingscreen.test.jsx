@@ -7,12 +7,12 @@ describe('Landing Screen',()=>{
     it('renders Landing Screen',()=>{
         expect(true).toBeTruthy();
     }),
-    it('renders Landing Screen',()=>{
+    it('renders Landing Screen correctly',()=>{
         const {getByTestId}=render(
             <NavigationContainer>
                 <LandingScreen/>
             </NavigationContainer>
         )
         expect(getByTestId("landing-screen")).toBeTruthy();
-    })
+    });
 })

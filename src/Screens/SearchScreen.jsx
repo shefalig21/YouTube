@@ -1,26 +1,54 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { View, StyleSheet, TextInput, TouchableOpacity,FlatList,Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import videos from '../Data/videos';
 
 class SearchScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {searchText: ''};
+    this.state = {
+      searchText: '',
+    };
   }
 
-  handleSearch= (text) => {
+  handleSearch = (text) => {
     this.setState({ searchText: text });
+  };
+
+  handleSearchResults = () => {
+    const { searchText } = this.state;
+    const filteredVideos = videos.filter(video => 
+      video.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    // if (!searchText) return null;
+
+    return (
+      <View testID="search-render">
+      <FlatList
+        data={filteredVideos}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.historyItem}>
+            <Icon name="history" size={24} style={styles.historyIcon} />
+            <Text style={styles.historyText}>{item.title}</Text>
+          </View>
+        )}
+      />
+       </View>
+    );
   };
 
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.searchHeader}>
-          <TouchableOpacity>
-            <Icon name="arrow-back" size={24} style={styles.icon} />
+          <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+            <Icon name="arrow-back" size={24} style={styles.icon} testID="back-icon"/>
           </TouchableOpacity>
           
           <TextInput
+            testID="search-input"
             style={styles.searchInput}
             placeholder="Search YouTube"
             placeholderTextColor="#888"
@@ -29,10 +57,10 @@ class SearchScreen extends Component {
           />
           
           <TouchableOpacity>
-            <Icon name="mic" size={24} style={styles.icon} />
+            <Icon name="mic" size={24} style={styles.icon} testID="mic-icon"/>
           </TouchableOpacity>
         </View>
-
+        {this.handleSearchResults()}
       </View>
     );
   }
@@ -60,14 +88,21 @@ const styles = StyleSheet.create({
   icon: {
     padding: 5,
   },
+  historyItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+  },
+  historyIcon: {
+    marginRight: 14,
+    color: 'black',
+  },
+  historyText: {
+    fontSize: 16,
+  },
 });
 
 export default SearchScreen;
-
-
-
-
-
 
 
 

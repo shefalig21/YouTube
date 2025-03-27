@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from '@testing-library/react-native';
+import { render,fireEvent } from '@testing-library/react-native';
 import BottomTabNav from "../src/Navigation/BottomTabNav";
 import { NavigationContainer } from "@react-navigation/native";
 
@@ -32,6 +32,14 @@ describe('Bottom Tab Navigation', () => {
         )
         expect(findByTestId('shorts-icon')).toBeTruthy();
     });
+    it('renders shorts icon',()=>{
+        const {findByTestId}=render(
+            <NavigationContainer>
+                <BottomTabNav/>
+            </NavigationContainer>
+        )
+        expect(findByTestId('add-icon')).toBeTruthy();
+    });
     it('renders subscriptions icon',()=>{
         const {findByTestId}=render(
             <NavigationContainer>
@@ -48,6 +56,28 @@ describe('Bottom Tab Navigation', () => {
     )
     expect(findByTestId('you-icon')).toBeTruthy();
 }); 
+it('renders home screen by default',()=>{
+    const {findByTestId}=render(
+        <NavigationContainer>
+            <BottomTabNav/>
+        </NavigationContainer>
+)
+expect(findByTestId("home-screen")).toBeTruthy();
+});
+// it('on clicking shorts tab, navigates to shorts screen correctly', async () => {
+//     const { findByTestId } = render(
+//         <NavigationContainer>
+//             <BottomTabNav />
+//         </NavigationContainer>
+//     );
+
+//     const shortsTab = await findByTestId("shorts-icon");
+//     fireEvent.press(shortsTab);
+
+//     const shortsScreen = await findByTestId("shorts-screen");
+//     expect(shortsScreen).toBeTruthy();
+// });
+
 });
 
 import 'react-native-gesture-handler';

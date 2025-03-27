@@ -18,8 +18,12 @@ export class SubHeader extends Component {
       'Mixes','Web Development','Fashion','Destinations','Data Structures','Asian Music'];
 
     return (
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.subHeader}>
-        <View style={styles.subContent}>
+      <ScrollView horizontal={true} 
+      showsHorizontalScrollIndicator={false} 
+      style={styles.subHeader}
+      testID="subHeaderScrollView"
+      >
+        <View style={styles.subContent} testID="sub-header">
           {categories.map((category) => (
             <TouchableOpacity
               key={category}
@@ -28,12 +32,14 @@ export class SubHeader extends Component {
                 this.state.selectedCategory === category ? styles.selected : {}
               ]}
               onPress={() => this.handleCategory(category)}
+              testID={`category-button-${category}`}
             >
               <Text
                 style={
                   this.state.selectedCategory === category? styles.selectedText: 
                   styles.text
                 }
+                testID={`category-text-${category}`} 
               >
                 {category}
               </Text>

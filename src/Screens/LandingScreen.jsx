@@ -9,8 +9,10 @@ export class LandingScreen extends Component {
   render() {
     return (
       <View style={styles.container} testID="landing-screen">
-        <Header navigation={this.props.navigation}/>
-        <SubHeader/>
+
+        <Header navigation={this.props.navigation} testID="header"/>
+
+        <SubHeader testID="sub-header"/>
 
         <FlatList
           data={videos}

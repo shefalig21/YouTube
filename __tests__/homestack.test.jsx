@@ -15,6 +15,22 @@ describe('Stack Screen',()=>{
         )
         expect(getByTestId('stack-screen')).toBeTruthy();
       });
+      test('renders Stack Navigation correctly', () => {
+        const { getByTestId } = render(
+            <NavigationContainer>
+                <HomeStack/>
+            </NavigationContainer>
+        )
+        expect(getByTestId('stack-screen')).toBeTruthy();
+      });
+      test('renders firstscreen: Home screen correctly', () => {
+        const { getByTestId } = render(
+            <NavigationContainer>
+                <HomeStack/>
+            </NavigationContainer>
+        )
+        expect(getByTestId('landing-screen')).toBeTruthy();
+      });
 })
 
 import 'react-native-gesture-handler';
