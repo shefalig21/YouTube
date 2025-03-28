@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const withNavigationHOC = (WrappedComponent) => {
   return (props) => {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
     return <WrappedComponent {...props} navigation={navigation} />;
   };
 };

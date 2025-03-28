@@ -24,27 +24,22 @@ describe('Header Component', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     expect(getByTestId('header-component')).toBeTruthy();
   });
-
   test('renders youtubeIcon', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     expect(getByTestId('youtube-icon')).toBeTruthy();
   });
-
   test('renders castIcon', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     expect(getByTestId('cast-icon')).toBeTruthy();
   });
-
   test('renders notificationIcon', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     expect(getByTestId('notification-icon')).toBeTruthy();
   });
-
   test('renders searchIcon', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     expect(getByTestId('search-icon')).toBeTruthy();
   });
-
   test('on clicking search icon, Search Screen opens', () => {
     const { getByTestId } = renderWithNavigation(<Header />);
     fireEvent.press(getByTestId('search-icon'));
@@ -116,7 +111,7 @@ describe('Header Component', () => {
 //   });
 
 //   it("on clicking search icon, Search Screen opens", () => {
-//     const navigation = { navigate: jest.fn() }; 
+//     const navigation = { navigate: jest.fn() };
 
 //     const page = render(<Header navigation={navigation} />);
 

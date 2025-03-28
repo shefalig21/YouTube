@@ -8,21 +8,19 @@ export class SubHeader extends Component {
       selectedCategory: 'All',
     };
   }
-
-  handleCategory= (category) => {
+  handleCategory = (category) => {
     this.setState({ selectedCategory: category });
   };
 
   render() {
-    const categories = ['All','News','Gaming','Comedy','Music','Web Series','Coding',
-      'Mixes','Web Development','Fashion','Destinations','Data Structures','Asian Music'];
-
+    const categories = ['All', 'News', 'Gaming', 'Comedy', 'Music', 'Web Series', 'Coding',
+      'Mixes', 'Web Development', 'Fashion', 'Destinations', 'Data Structures', 'Asian Music'];
     return (
-      <ScrollView horizontal={true} 
-      showsHorizontalScrollIndicator={false} 
-      style={styles.subHeader}
-      testID="subHeaderScrollView"
-      >
+      <ScrollView horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        style={styles.subHeader}
+        testID="subHeaderScrollView">
+
         <View style={styles.subContent} testID="sub-header">
           {categories.map((category) => (
             <TouchableOpacity
@@ -32,14 +30,13 @@ export class SubHeader extends Component {
                 this.state.selectedCategory === category ? styles.selected : {}
               ]}
               onPress={() => this.handleCategory(category)}
-              testID={`category-button-${category}`}
-            >
+              testID={`category-button-${category}`}>
               <Text
                 style={
-                  this.state.selectedCategory === category? styles.selectedText: 
-                  styles.text
+                  this.state.selectedCategory === category ? styles.selectedText :
+                    styles.text
                 }
-                testID={`category-text-${category}`} 
+                testID={`category-text-${category}`}
               >
                 {category}
               </Text>
@@ -52,7 +49,6 @@ export class SubHeader extends Component {
 }
 
 export default SubHeader;
-
 const styles = StyleSheet.create({
   subHeader: {
     marginTop: 60,
@@ -87,119 +83,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react'
-// import { Text, View,ScrollView,TouchableOpacity,StyleSheet} from 'react-native'
-
-// export class SubHeader extends Component {
-//   render() {
-//     return (
-//     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.subHeader}>
-//           <View style={styles.subContent}>
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>All</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>News</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Gaming</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Comedy</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Music</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Web Series</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Coding</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Mixes</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Web Development</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Fashion</Text>
-//             </TouchableOpacity>
-            
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Destinations</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Data Structures</Text>
-//             </TouchableOpacity>
-
-//             <TouchableOpacity style={styles.innerContent}>
-//                 <Text style={styles.text}>Asian Music</Text>
-//             </TouchableOpacity>
-
-//           </View>
-
-//         </ScrollView>
- 
-//     )
-//   }
-// }
-
-// export default SubHeader
-
-// const styles=StyleSheet.create({
-//     subHeader: {
-//         marginTop: 60,
-//         position: 'absolute',
-//         top: 0,
-//         left: 0,
-//         right: 0,
-//         backgroundColor: 'white',
-//         zIndex: 1,
-//       },
-//       subContent: {
-//         flexDirection: 'row',
-//         alignItems: 'center',
-//         paddingHorizontal: 10,
-//       },
-//       innerContent: {
-//         backgroundColor: '#e0e0e0',
-//         paddingVertical: 6,
-//         paddingHorizontal: 10,
-//         borderRadius: 7,
-//         marginRight: 8, 
-//       },
-//       text: {
-//         fontSize: 14,
-//         color: 'black',
-//       },
-// });
 
 
 

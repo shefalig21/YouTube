@@ -6,11 +6,10 @@ class You extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-
         <View style={styles.headerContainer}>
 
         </View>
-        
+
         <View style={styles.profileContainer}>
           <Image
             source={require('../assets/images/profile.png')}
@@ -25,15 +24,15 @@ class You extends Component {
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Switch account</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Google Account</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Turn on Incognito</Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
 
         </View>
 
@@ -46,11 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  headerContainer:{
+  headerContainer: {
 
   },
   profileContainer: {
-    marginTop:50,
+    marginTop: 50,
     padding: 15,
     flexDirection: 'row',
     alignItems: 'center'
@@ -71,17 +70,17 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginVertical:6,
+    marginVertical: 6,
   },
   button: {
     backgroundColor: '#eee',
     padding: 9,
     borderRadius: 20,
-    marginHorizontal:2,
+    marginHorizontal: 2,
   },
-  buttonText:{
-    fontSize:13,
-    fontWeight:'bold',
+  buttonText: {
+    fontSize: 13,
+    fontWeight: 'bold',
   },
 });
 

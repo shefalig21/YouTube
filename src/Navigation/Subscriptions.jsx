@@ -5,6 +5,7 @@ export class Subscriptions extends Component {
   render() {
     return (
       <View>
+        <Text>Subscriptions</Text>
       </View>
     )
   }
