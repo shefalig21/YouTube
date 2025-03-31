@@ -14,6 +14,7 @@ jest.mock('react-native-gesture-handler', () => ({
 // Mock Animated Native Helper (fixes react-native-reanimated errors)
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper', () => jest.fn());
 
+
 // Mock @react-navigation/native
 jest.mock('@react-navigation/native', () => ({
   useNavigation: () => ({
