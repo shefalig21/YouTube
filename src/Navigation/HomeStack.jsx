@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LandingScreen from '../Screens/LandingScreen';
 import SearchScreen from '../Screens/SearchScreen';
 import { SafeAreaView, View } from "react-native";
+import DrawerNav from './DrawerNavigation/DrawerNav';
 
 const Stack = createStackNavigator();
 
@@ -13,9 +14,9 @@ class HomeStack extends Component {
       <>
         <View testID="stack-screen" />
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="LandingScreen"
-            component={LandingScreen}
-            options={{ testID: "landing-screen" }}
+          <Stack.Screen name="DrawerNav"
+            component={DrawerNav}
+            options={{ testID: "drawerNav-screen" }} 
           />
           <Stack.Screen
             name="SearchScreen"
@@ -29,3 +30,20 @@ class HomeStack extends Component {
 }
 
 export default HomeStack;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

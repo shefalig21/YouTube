@@ -4,9 +4,6 @@ import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { NavigationContainer } from "@react-navigation/native";
 
 describe('Search screen', () => {
-  it('renders', () => {
-    expect(true).toBeTruthy();
-  });
   test('renders SearchScreen correctly', () => {
     const { getByTestId } = render(<SearchScreen />);
     expect(getByTestId('search-render')).toBeTruthy();

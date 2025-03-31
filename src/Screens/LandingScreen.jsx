@@ -10,9 +10,10 @@ export class LandingScreen extends Component {
     return (
       <View style={styles.container} testID="landing-screen">
 
-        <Header navigation={this.props.navigation} testID="header" />
+        <Header navigation={this.props.navigation} testID="header-component" />
         <SubHeader testID="sub-header" />
         <FlatList
+          testID="video-list"
           data={videos}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
@@ -38,6 +39,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -21,7 +21,6 @@ class SearchScreen extends Component {
       video.title.toLowerCase().includes(searchText.toLowerCase())
     );
 
-    // if (!searchText) return null;
     return (
       <View testID="search-render">
         <FlatList
@@ -89,7 +88,8 @@ const styles = StyleSheet.create({
   historyItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
   },
   historyIcon: {
     marginRight: 14,
@@ -97,24 +97,13 @@ const styles = StyleSheet.create({
   },
   historyText: {
     fontSize: 16,
+    flex: 1,
+    textAlign: 'left',
+    flexWrap: 'wrap',
   },
 });
 
 export default SearchScreen;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

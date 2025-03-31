@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Video from 'react-native-video';
 
 class VideoCard extends Component {
   render() {
     const { thumbnail, title, channel, views, time } = this.props;
 
     return (
-      <View style={styles.videoContainer}>
-        <TouchableOpacity style={styles.videoCard}>
+      <View style={styles.videoContainer} testID='video-card'>
+        <TouchableOpacity style={styles.videoCard} testID="videoCard-touchable">
 
-          <Image source={{ uri: thumbnail }} style={styles.thumbnail} />
+        <Video
+            source={thumbnail} 
+            style={styles.videoPlayer}
+            controls
+            resizeMode="contain"
+            testID="video-play"
+            // repeat
+            // autoPlay
+            // muted
+          />
 
           <View style={styles.videoInfo}>
 
-            <Image
-              source={require('../assets/images/panda.png')}
-              style={styles.channelAvatar} />
+          <Image 
+              source={require('../assets/images/panda.png')} 
+              style={styles.channelAvatar}
+              testID="channel-avatar"
+            />
 
             <View style={styles.videoText}>
-              <Text style={styles.videoTitle}>{title}</Text>
+              <Text style={styles.videoTitle} testID="video-title">{title}</Text>
 
               <View style={styles.videoStatsContainer}>
-                <Text style={styles.videoChannel}>{channel}</Text>
+                <Text style={styles.videoChannel}  testID="video-channel">{channel}</Text>
                 <Text style={styles.videoSeparator}>•</Text>
-                <Text style={styles.videoStats}>{views}</Text>
+                <Text style={styles.videoStats} testID="video-views">{views}</Text>
                 <Text style={styles.videoSeparator}>•</Text>
-                <Text style={styles.videoStats}>{time}</Text>
+                <Text style={styles.videoStats} testID="video-time">{time}</Text>
               </View>
             </View>
           </View>
@@ -43,7 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     backgroundColor: '#fff',
   },
-  thumbnail: {
+  videoPlayer: {
     width: '100%',
     height: 220,
   },
@@ -88,6 +100,11 @@ const styles = StyleSheet.create({
 });
 
 export default VideoCard;
+
+
+
+
+
 
 
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import withNavigationHOC from '../utils/withNavigationHOC';
 
 export class SubHeader extends Component {
   constructor(props) {
@@ -22,6 +24,12 @@ export class SubHeader extends Component {
         testID="subHeaderScrollView">
 
         <View style={styles.subContent} testID="sub-header">
+          <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}
+            testID="explore-button"
+            >
+          <Icon name="explore" size={20} color="black" style={styles.icon} testID="explore-icon" />
+          </TouchableOpacity>
+
           {categories.map((category) => (
             <TouchableOpacity
               key={category}
@@ -48,7 +56,8 @@ export class SubHeader extends Component {
   }
 }
 
-export default SubHeader;
+export default withNavigationHOC(SubHeader)
+
 const styles = StyleSheet.create({
   subHeader: {
     marginTop: 60,
@@ -63,6 +72,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 10,
+  },
+  icon:{
+    marginRight: 10,
+    backgroundColor: '#e0e0e0',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 7,
+
   },
   innerContent: {
     backgroundColor: '#e0e0e0',
@@ -83,8 +100,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-
 
 
 

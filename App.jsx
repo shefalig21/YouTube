@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNav from './src/Navigation/BottomTabNav';
+import BottomTabNav from './src/Navigation/Bottom Tab Navigation/BottomTabNav';
 
-const App = () => {
-  return (
-    <NavigationContainer> 
-      <BottomTabNav />
-    </NavigationContainer>
-  );
-};
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <BottomTabNav/>
+      </NavigationContainer>
+    );
+  }
+}
 
 export default App;
+
