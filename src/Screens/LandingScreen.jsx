@@ -11,7 +11,7 @@ export class LandingScreen extends Component {
       <View style={styles.container} testID="landing-screen">
 
         <Header navigation={this.props.navigation} testID="header-component" />
-        <SubHeader testID="sub-header" />
+        <SubHeader navigation={this.props.navigation} testID="sub-header" />
         <FlatList
           testID="video-list"
           data={videos}

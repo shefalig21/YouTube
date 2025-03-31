@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export class Music extends Component {
   render() {
     return (
-      <View>
+      <View testID="music">
         <Text>Hello</Text>
       </View>
     )

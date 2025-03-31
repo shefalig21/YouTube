@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export class Courses extends Component {
   render() {
     return (
-      <View>
+      <View testID="course">
         <Text>Hello</Text>
       </View>
     )

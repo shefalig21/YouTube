@@ -15,6 +15,8 @@ export class SubHeader extends Component {
   };
 
   render() {
+    console.log(this.props.navigation);
+    
     const categories = ['All', 'News', 'Gaming', 'Comedy', 'Music', 'Web Series', 'Coding',
       'Mixes', 'Web Development', 'Fashion', 'Destinations', 'Data Structures', 'Asian Music'];
     return (

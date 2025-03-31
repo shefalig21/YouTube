@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import HomeStack from '../HomeStack';
 import Shorts from './Shorts';
@@ -32,7 +32,7 @@ class BottomTabNav extends React.Component {
               tabBarIcon: ({ color, size }) => (
                 <Icon name="home" size={size} color={color} />
               ),
-              tabBarAccessibilityLabel: "home-icon",
+              tabBarAccessibilityLabel: "home-icon",     
             }} />
 
           <Tab.Screen
@@ -89,14 +89,6 @@ class BottomTabNav extends React.Component {
 }
 
 export default withNavigationHOC(BottomTabNav);
-
-
-
-
-
-
-
-
 
 
 

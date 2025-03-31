@@ -60,175 +60,59 @@ describe('Bottom Tab Navigation', () => {
                 )
                 expect(findByTestId("stack-screen")).toBeTruthy();
             }); 
-            it("navigates to Shorts screen when shorts tab is pressed", async () => {
+            it("navigates to Shorts screen when shorts tab is pressed",() => {
                 const { findByTestId , getByLabelText } = render(
                   <NavigationContainer>
                     <BottomTabNav />
                   </NavigationContainer>
                 );
             
-                const shortsTab =  waitFor(() => getByLabelText("shorts-icon"));
+                const shortsTab =waitFor(() => getByLabelText("shorts-icon"));
                 fireEvent.press(shortsTab);
             
-                const shortsScreen =  waitFor(() => findByTestId("shorts-screen"));
+                const shortsScreen =waitFor(() => findByTestId("shorts-screen"));
                 expect(shortsScreen).toBeTruthy();
               });
-            it("navigates to upload screen when upload tab is pressed", async () => {
+            it("navigates to upload screen when upload tab is pressed",() => {
                 const { findByTestId , getByLabelText } = render(
                   <NavigationContainer>
                     <BottomTabNav />
                   </NavigationContainer>
                 );
             
-                const uploadTab =  waitFor(() => getByLabelText("upload-icon"));
+                const uploadTab =waitFor(() => getByLabelText("upload-icon"));
                 fireEvent.press(uploadTab);
             
-                const uploadScreen =  waitFor(() => findByTestId("upload-screen"));
+                const uploadScreen =waitFor(() => findByTestId("upload-screen"));
                 expect(uploadScreen).toBeTruthy();
               });
-              it("navigates to subscription screen when subscription tab is pressed", async () => {
+              it("navigates to subscription screen when subscription tab is pressed",() => {
                 const { findByTestId , getByLabelText } = render(
                   <NavigationContainer>
                     <BottomTabNav />
                   </NavigationContainer>
                 );
             
-                const uploadTab =  waitFor(() => getByLabelText("subscriptions-icon"));
-                fireEvent.press(uploadTab);
+                const subscriptionTab =waitFor(() => getByLabelText("subscriptions-icon"));
+                fireEvent.press(subscriptionTab);
             
-                const uploadScreen =  waitFor(() => findByTestId("subscriptions-screen"));
-                expect(uploadScreen).toBeTruthy();
+                const subscriptionScreen =waitFor(() => findByTestId("subscriptions-screen"));
+                expect(subscriptionScreen).toBeTruthy();
               });
-              it("navigates to profile screen when profile tab is pressed", async () => {
+              it("navigates to profile screen when profile tab is pressed",() => {
                 const { findByTestId , getByLabelText } = render(
                   <NavigationContainer>
                     <BottomTabNav />
                   </NavigationContainer>
                 );
             
-                const uploadTab =  waitFor(() => getByLabelText("profile-icon"));
-                fireEvent.press(uploadTab);
+                const profileTab =waitFor(() => getByLabelText("profile-icon"));
+                fireEvent.press(profileTab);
             
-                const uploadScreen =  waitFor(() => findByTestId("profile-screen"));
-                expect(uploadScreen).toBeTruthy();
+                const profileScreen =waitFor(() => findByTestId("profile-screen"));
+                expect(profileScreen).toBeTruthy();
               });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

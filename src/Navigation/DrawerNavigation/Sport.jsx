@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export class Sport extends Component {
   render() {
     return (
-      <View>
+      <View testID="sport">
         <Text>Hello</Text>
       </View>
     )

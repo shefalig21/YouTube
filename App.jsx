@@ -1,19 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNav from './src/Navigation/Bottom Tab Navigation/BottomTabNav';
+import DrawerNav from './src/Navigation/DrawerNavigation/DrawerNav'; // Ensure DrawerNav is the root
 
-
-
-
-class App extends Component {
-  render() {
-    return (
-      <NavigationContainer>
-        <BottomTabNav/>
-      </NavigationContainer>
-    );
-  }
-}
+const App = () => {
+  return (
+    <NavigationContainer>
+      <DrawerNav />
+    </NavigationContainer>
+  );
+};
 
 export default App;
-
