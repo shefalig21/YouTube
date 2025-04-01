@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
+import PropTypes from 'prop-types'; 
 import Header from '../Components/Header';
 import SubHeader from '../Components/SubHeader';
 import videos from '../Data/videos';
@@ -9,7 +10,6 @@ export class LandingScreen extends Component {
   render() {
     return (
       <View style={styles.container} testID="landing-screen">
-
         <Header navigation={this.props.navigation} testID="header-component" />
         <SubHeader navigation={this.props.navigation} testID="sub-header" />
         <FlatList
@@ -31,6 +31,10 @@ export class LandingScreen extends Component {
   }
 }
 
+LandingScreen.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
+
 export default LandingScreen;
 
 const styles = StyleSheet.create({
@@ -39,31 +43,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

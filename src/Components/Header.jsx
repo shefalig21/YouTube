@@ -4,9 +4,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import withNavigationHOC from '../utils/withNavigationHOC';
 
 class Header extends Component {
-  handleSearch = () => {
+  handleSearch=()=>{
     this.props.navigation.navigate("SearchScreen");
   };
+
+  handleNotification=()=>{
+    this.props.navigation.navigate("Notification");
+  }
 
   render() {
     return (
@@ -25,7 +29,7 @@ class Header extends Component {
             <Icon name="cast" size={24} color="black" testID="cast-icon" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconSpacing}>
+          <TouchableOpacity style={styles.iconSpacing} onPress={this.handleNotification}>
             <Icon name="notifications-none" size={25} color="black" testID="notification-icon" />
           </TouchableOpacity>
 

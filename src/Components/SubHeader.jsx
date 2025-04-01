@@ -15,7 +15,6 @@ export class SubHeader extends Component {
   };
 
   render() {
-    console.log(this.props.navigation);
     
     const categories = ['All', 'News', 'Gaming', 'Comedy', 'Music', 'Web Series', 'Coding',
       'Mixes', 'Web Development', 'Fashion', 'Destinations', 'Data Structures', 'Asian Music'];
@@ -26,9 +25,7 @@ export class SubHeader extends Component {
         testID="subHeaderScrollView">
 
         <View style={styles.subContent} testID="sub-header">
-          <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}
-            testID="explore-button"
-            >
+          <TouchableOpacity testID="explore-button">
           <Icon name="explore" size={20} color="black" style={styles.icon} testID="explore-icon" />
           </TouchableOpacity>
 

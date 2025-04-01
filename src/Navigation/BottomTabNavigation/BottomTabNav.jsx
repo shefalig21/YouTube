@@ -11,9 +11,6 @@ import withNavigationHOC from '../../utils/withNavigationHOC';
 
 const Tab = createBottomTabNavigator();
 class BottomTabNav extends React.Component {
-  handleAdd = () => {
-    this.props.navigation.navigate('Add');
-  };
 
   render() {
     return (
@@ -89,6 +86,35 @@ class BottomTabNav extends React.Component {
 }
 
 export default withNavigationHOC(BottomTabNav);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

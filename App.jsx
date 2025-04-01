@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import DrawerNav from './src/Navigation/DrawerNavigation/DrawerNav'; // Ensure DrawerNav is the root
+import BottomTabNav from './src/Navigation/BottomTabNavigation/BottomTabNav';
+import NotificationHeader from './src/Components/NotificationHeader';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <DrawerNav />
+      <BottomTabNav/>
     </NavigationContainer>
   );
 };
