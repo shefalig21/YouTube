@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -25,7 +26,7 @@ class NotificationHeader extends Component {
             <Icon name="notifications-none" size={25} color="black" testID="notification-icon" />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.iconSpacing} onPress={this.handleSearch}>
+          <TouchableOpacity style={styles.iconSpacing}>
             <Icon name="more-vert" size={25} color="black" testID="more-icon"/>
           </TouchableOpacity>
         </View>
@@ -33,6 +34,12 @@ class NotificationHeader extends Component {
     );
   }
 }
+
+NotificationHeader.propTypes = {
+  navigation: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 const styles = StyleSheet.create({
   headerContainer: {

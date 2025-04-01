@@ -5,7 +5,7 @@ class Profile extends Component {
   render() {
     return (
       <View testID="profile-screen">
-        <Text>Hello</Text>
+        <Text>Profile</Text>
       </View>
     );
   }

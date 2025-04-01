@@ -1,11 +1,11 @@
-import React from "react";
-import { render } from "@testing-library/react-native";
-import Upload from "../src/Navigation/BottomTabNavigation/Upload";
+import React from "react"
+import { render } from "@testing-library/react-native"
+import Upload from "../src/Navigation/BottomTabNavigation/Upload"
 
-describe('Upload Screen',()=>{
-    it('renders upload screen correctly',()=>{
+describe("Profile Screen",()=>{
+    it('renders profile screen completely',()=>{
         const {getByTestId}=render(<Upload/>)
 
-        expect(getByTestId('upload-screen'));
+        expect(getByTestId('upload-screen')).toBeTruthy();
     })
 })

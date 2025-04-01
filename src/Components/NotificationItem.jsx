@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import Video from 'react-native-video';
+import PropTypes from 'prop-types';
 
 class NotificationItem extends Component {
     render() {
         const { thumbnail, title, channel, time } = this.props;
 
         return (
-            <View style={styles.notificationItem} testID="notificationItem">
+            <View style={styles.notificationItem} testID="notification-item">
                 <View style={styles.notificationContent}>
              
                     <Image
                         source={require('../assets/images/panda.png')}
-                        style={styles.avatar} testID="avatar-icon"/>
+                        style={styles.avatar}
+                        testID="notification-avatar"
+                        />
 
                     <View style={styles.rightSide}>
-                        <Text style={styles.channel}>{channel}</Text>
-                        <Text style={styles.title} numberOfLines={3}>{title}</Text>
-                        <Text style={styles.time}>{time}</Text>
+                        <Text style={styles.channel} testID="notification-channel">{channel}</Text>
+                        <Text style={styles.title} numberOfLines={3} testID="notification-title">{title}</Text>
+                        <Text style={styles.time} testID="notification-time">{time}</Text>
                     </View>
 
                     <View style={styles.videoContainer}>
@@ -27,6 +30,7 @@ class NotificationItem extends Component {
                             controls
                             resizeMode="contain"
                             paused={true}
+                            testID="notification-video"
                         />
                     </View>
                 </View>
@@ -34,6 +38,13 @@ class NotificationItem extends Component {
         );
     }
 }
+
+NotificationItem.propTypes = {
+    thumbnail: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    channel: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
     notificationItem: {

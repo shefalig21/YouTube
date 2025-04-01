@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Video from 'react-native-video';
 
@@ -9,21 +10,16 @@ class VideoCard extends Component {
     return (
       <View style={styles.videoContainer} testID='video-card'>
         <TouchableOpacity style={styles.videoCard} testID="videoCard-touchable">
-
-        <Video
+          <Video
             source={thumbnail} 
             style={styles.videoPlayer}
             controls
             resizeMode="contain"
             testID="video-play"
-            // repeat
-            // autoPlay
-            // muted
           />
 
           <View style={styles.videoInfo}>
-
-          <Image 
+            <Image 
               source={require('../assets/images/panda.png')} 
               style={styles.channelAvatar}
               testID="channel-avatar"
@@ -31,9 +27,8 @@ class VideoCard extends Component {
 
             <View style={styles.videoText}>
               <Text style={styles.videoTitle} testID="video-title">{title}</Text>
-
               <View style={styles.videoStatsContainer}>
-                <Text style={styles.videoChannel}  testID="video-channel">{channel}</Text>
+                <Text style={styles.videoChannel} testID="video-channel">{channel}</Text>
                 <Text style={styles.videoSeparator}>•</Text>
                 <Text style={styles.videoStats} testID="video-views">{views}</Text>
                 <Text style={styles.videoSeparator}>•</Text>
@@ -46,6 +41,17 @@ class VideoCard extends Component {
     );
   }
 }
+
+VideoCard.propTypes = {
+  thumbnail: PropTypes.oneOfType([
+    PropTypes.shape({ uri: PropTypes.string }),
+    PropTypes.number,
+  ]).isRequired,
+  title: PropTypes.string.isRequired,
+  channel: PropTypes.string.isRequired,
+  views: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
 
 const styles = StyleSheet.create({
   videoContainer: {
@@ -100,16 +106,6 @@ const styles = StyleSheet.create({
 });
 
 export default VideoCard;
-
-
-
-
-
-
-
-
-
-
 
 
 

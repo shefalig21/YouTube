@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import withNavigationHOC from '../utils/withNavigationHOC';
+import PropTypes from 'prop-types';
 
 export class SubHeader extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ export class SubHeader extends Component {
   };
 
   render() {
-    
     const categories = ['All', 'News', 'Gaming', 'Comedy', 'Music', 'Web Series', 'Coding',
       'Mixes', 'Web Development', 'Fashion', 'Destinations', 'Data Structures', 'Asian Music'];
     return (
@@ -25,8 +25,8 @@ export class SubHeader extends Component {
         testID="subHeaderScrollView">
 
         <View style={styles.subContent} testID="sub-header">
-          <TouchableOpacity testID="explore-button">
-          <Icon name="explore" size={20} color="black" style={styles.icon} testID="explore-icon" />
+          <TouchableOpacity testID="explore-button" >
+            <Icon name="explore" size={20} color="black" style={styles.icon} testID="explore-icon" />
           </TouchableOpacity>
 
           {categories.map((category) => (
@@ -55,7 +55,13 @@ export class SubHeader extends Component {
   }
 }
 
-export default withNavigationHOC(SubHeader)
+SubHeader.propTypes = {
+  navigation: PropTypes.shape({
+    openDrawer: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
+export default withNavigationHOC(SubHeader);
 
 const styles = StyleSheet.create({
   subHeader: {
@@ -78,7 +84,6 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     paddingHorizontal: 8,
     borderRadius: 7,
-
   },
   innerContent: {
     backgroundColor: '#e0e0e0',
@@ -99,16 +104,3 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

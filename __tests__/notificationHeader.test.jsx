@@ -1,55 +1,31 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render,fireEvent } from "@testing-library/react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import NotificationHeader from "../src/Components/NotificationHeader";
 
-
 describe('Notification Header',()=>{
-    it('renders',()=>{
-        expect(true).toBeTruthy();
-    })
-    it('renders notification screen correctly',()=>{
+    const mockNavigation = { goBack: jest.fn() };
+
+    it('renders notification component and all icons correctly',()=>{
         const {getByTestId}=render(
             <NavigationContainer>
                 <NotificationHeader/>
             </NavigationContainer>
         )
         expect(getByTestId('notification')).toBeTruthy();
-    })
-    it('renders back arrow correctly',()=>{
-        const {getByTestId}=render(
-            <NavigationContainer>
-                <NotificationHeader/>
-            </NavigationContainer>
-        )
         expect(getByTestId('arrow-icon')).toBeTruthy();
-    })
-    it('renders cast arrow correctly',()=>{
-        const {getByTestId}=render(
-            <NavigationContainer>
-                <NotificationHeader/>
-            </NavigationContainer>
-        )
         expect(getByTestId('cast-icon')).toBeTruthy();
-    })
-    it('renders notification arrow correctly',()=>{
-        const {getByTestId}=render(
-            <NavigationContainer>
-                <NotificationHeader/>
-            </NavigationContainer>
-        )
         expect(getByTestId('notification-icon')).toBeTruthy();
-    })
-    it('renders notification arrow correctly',()=>{
-        const {getByTestId}=render(
-            <NavigationContainer>
-                <NotificationHeader/>
-            </NavigationContainer>
-        )
         expect(getByTestId('more-icon')).toBeTruthy();
     })
-
-
+    it('when back icon is pressed,should go back to previous screen', () => {
+        const { getByTestId } = render(
+        <NotificationHeader navigation={mockNavigation} />);
+        
+        fireEvent.press(getByTestId('arrow-icon'));
+        expect(mockNavigation.goBack).toHaveBeenCalled();
+      });
+    
 })
 
 

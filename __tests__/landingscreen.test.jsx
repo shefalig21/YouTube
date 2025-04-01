@@ -21,14 +21,12 @@ describe('Landing Screen', () => {
             expect(getByTestId("header-component")).toBeTruthy();
             expect(getByTestId("sub-header")).toBeTruthy();
         });
-        it('renders video list correctly',()=>{
-            const {getByTestId}=render(
+        it('renders video-list correctly', () => {
+            const { getByTestId } = render(
                 <NavigationContainer>
-                    <LandingScreen/>
+                    <LandingScreen />
                 </NavigationContainer>
             )
             expect(getByTestId('video-list')).toBeTruthy();
-
-        })
-
+        });
 })

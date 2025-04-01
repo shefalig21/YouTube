@@ -2,26 +2,27 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import withNavigationHOC from '../utils/withNavigationHOC';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
-  handleSearch=()=>{
+  handleSearch = () => {
     this.props.navigation.navigate("SearchScreen");
   };
 
-  handleNotification=()=>{
+  handleNotification = () => {
     this.props.navigation.navigate("Notification");
-  }
+  };
 
   render() {
     return (
       <View style={styles.headerContainer} testID="header-component">
-
         <TouchableOpacity style={styles.leftIcons}>
           <Image
             source={require('../assets/images/youtube-icon.png')}
             style={styles.image}
             resizeMode="contain"
-            testID="youtube-icon" />
+            testID="youtube-icon"
+          />
         </TouchableOpacity>
 
         <View style={styles.rightIcons}>
@@ -41,6 +42,13 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
+
 export default withNavigationHOC(Header);
 
 const styles = StyleSheet.create({
@@ -68,10 +76,3 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
-
-
-
-
-
-
-

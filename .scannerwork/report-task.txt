@@ -2,5 +2,5 @@ projectKey=rn-youtube
 serverUrl=http://localhost:9000
 serverVersion=25.3.0.104237
 dashboardUrl=http://localhost:9000/dashboard?id=rn-youtube
-ceTaskId=d4e79d59-2af1-4e8d-bb31-dc3f0a17b75b
-ceTaskUrl=http://localhost:9000/api/ce/task?id=d4e79d59-2af1-4e8d-bb31-dc3f0a17b75b
+ceTaskId=218a3085-0708-4a9b-9012-efe34e23d9d7
+ceTaskUrl=http://localhost:9000/api/ce/task?id=218a3085-0708-4a9b-9012-efe34e23d9d7
